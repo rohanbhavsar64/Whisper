@@ -1,8 +1,8 @@
 import streamlit as st
-import whisper 
 st.title('Transcripter App')
 audio=st.file_uploader('Upload Audio File',type=['wav','mp3','m4a','mp4'])
-model=whisper.load_model('base')
+import whisper
+model = whisper.load_model('large')
 if st.button('Transcribe'):
   if audio is not None:
     t=model.transcribe(audio.name)
