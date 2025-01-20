@@ -4,5 +4,5 @@ audio=st.file_uploader('Upload Audio File')
 import whisper
 model = whisper.load_model('base')
 if audio:
-  t=model.transcribe(audio.name)
+  t=model.transcribe(audio)
   st.markdown(t['text'])
